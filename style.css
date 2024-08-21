@@ -1,0 +1,45 @@
+body {
+  display: grid;
+  place-content: center;
+  background-color: #fff;
+}
+
+@keyframes scroll {
+  to {
+    transform: translate(calc(-50% - 0.5rem));
+  }
+}
+
+.scroller {
+  width: 100vw;
+}
+
+.scroller-content img {
+  height: 160px;
+  border: 3px solid #000;
+}
+
+.scroller-content {
+  padding-block: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.scroller {
+  overflow: hidden;
+}
+
+.scroller .scroller-content {
+  width: max-content;
+  flex-wrap: nowrap;
+  animation: scroll var(--_animation-duration, 30s) var(--_animation-direction, forwards) linear infinite;
+}
+
+.scroller[direction='right'] {
+  --_animation-direction: reverse;
+}
+
+.scroller[direction='left'] {
+  --_animation-direction: forwards;
+}
