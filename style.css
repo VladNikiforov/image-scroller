@@ -4,18 +4,19 @@ body {
   background-color: #fff;
 }
 
-@keyframes scroll {
+@keyframes scrollHorizontal {
   to {
-    transform: translate(calc(-50% - 0.5rem));
+    transform: translateX(calc(-50% - 0.5rem));
   }
 }
 
 .scroller {
   width: 100vw;
+  overflow: hidden;
 }
 
 .scroller-content img {
-  height: 200px;
+  height: 30vh;
   border: 3px solid #000;
 }
 
@@ -26,14 +27,10 @@ body {
   gap: 1rem;
 }
 
-.scroller {
-  overflow: hidden;
-}
-
 .scroller .scroller-content {
   width: max-content;
   flex-wrap: nowrap;
-  animation: scroll var(--_animation-duration, 30s) var(--_animation-direction, forwards) linear infinite;
+  animation: scrollHorizontal var(--_animation-duration, 30s) var(--_animation-direction, forwards) linear infinite;
 }
 
 .scroller[direction='right'] {
