@@ -1,3 +1,4 @@
+//SCROLL
 const scrollers = document.querySelectorAll('.scroller')
 
 scrollers.forEach((scroller) => {
@@ -11,34 +12,33 @@ scrollers.forEach((scroller) => {
   })
 })
 
-const Bill = document.getElementById('Bill')
+//BILL CIPHER GLITCH
+let imgs_BillCipher = ['Bill-Cipher', 'broken-TV', 'art', 'binary', 'broken-TV', 'art', 'binary']
+imgs_BillCipher = imgs_BillCipher.map((img) => {
+  return `images/BillCipher/${img}.png`
+})
 
-const images = ['images/BillCipher.png', 'images/brokenTV.png', 'images/art.png', 'images/binary.png', 'images/brokenTV.png', 'images/art.png', 'images/binary.png']
-
-let currentIndex = 0
-
+let indexBillCipher = 0
 function glitchEffect() {
-  Bill.src = images[currentIndex]
+  const BillCipher = document.getElementById('BillCipher')
+  BillCipher.src = imgs_BillCipher[indexBillCipher]
 
-  setTimeout(glitchEffect, currentIndex == 0 ? 250 : 100)
+  setTimeout(glitchEffect, indexBillCipher == 0 ? 250 : 100)
 
-  currentIndex = (currentIndex + 1) % images.length
+  indexBillCipher == imgs_BillCipher.length - 1 ? (indexBillCipher = 0) : indexBillCipher++
 }
-
 glitchEffect()
 
-const Water = document.getElementById('Water')
+//ELEMENTS LOOP
+let imgs_Elements = ['water', 'fire', 'earth', 'wind', 'leaf']
+imgs_Elements = imgs_Elements.map((img) => {
+  return `images/Elements/${img}.png`
+})
 
-const elements = ['images/water.png', 'images/fire.png', 'images/earth.png', 'images/wind.png', 'images/leaf.png']
+let indexElements = 0
+setInterval(() => {
+  const Elements = document.getElementById('Elements')
+  Elements.src = imgs_Elements[indexElements]
 
-let currentElement = 0
-
-function switchImgs() {
-  Water.src = elements[currentElement]
-
-  setTimeout(switchImgs, 1000)
-
-  currentElement = (currentElement + 1) % elements.length
-}
-
-switchImgs()
+  indexElements == imgs_Elements.length - 1 ? (indexElements = 0) : indexElements++
+}, 1000)
