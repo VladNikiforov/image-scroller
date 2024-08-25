@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function paperplane() {
   const paperplane = document.getElementById('paper-plane')
-  paperplane.style.animation = 'fly 2s forwards linear'
+  paperplane.style.animation = 'fly 2.5s forwards linear'
   setTimeout(() => {
     paperplane.style.animation = 'none'
-  }, 2000)
+  }, 2500)
 }
