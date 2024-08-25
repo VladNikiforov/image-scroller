@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const BillCipher = document.getElementById('BillCipher')
     BillCipher.src = imgs_BillCipher[indexBillCipher]
 
-    setTimeout(glitchEffect, indexBillCipher == 0 ? 400 : 150)
+    setTimeout(glitchEffect, indexBillCipher == 0 ? 500 : 150)
 
     indexBillCipher == imgs_BillCipher.length - 1 ? (indexBillCipher = 0) : indexBillCipher++
   }
@@ -51,4 +51,23 @@ function paperplane() {
   setTimeout(() => {
     paperplane.style.animation = 'none'
   }, 2500)
+}
+
+let mode = 'moon'
+function theme() {
+  const Theme = document.getElementById('Theme')
+  if (mode == 'moon') {
+    document.body.style.backgroundColor = '#2b2b2b'
+    Theme.src = 'images/Theme/Sun.png'
+    setTimeout(() => {
+      mode = 'sun'
+    }, 1000)
+  }
+  if (mode == 'sun') {
+    document.body.style.backgroundColor = '#fff'
+    Theme.src = 'images/Theme/Moon.png'
+    setTimeout(() => {
+      mode = 'moon'
+    }, 1000)
+  }
 }

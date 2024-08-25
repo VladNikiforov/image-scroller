@@ -19,6 +19,11 @@ body {
 .scroller-content img {
   height: 30vh;
   border: 3px solid #000;
+  transition: transform 0.3s ease;
+}
+
+.scroller-content img:hover {
+  transform: scale(1.1);
 }
 
 .scroller-content {
