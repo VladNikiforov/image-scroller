@@ -2,6 +2,7 @@ body {
   display: grid;
   place-content: center;
   background-color: #fff;
+  overflow: hidden;
 }
 
 @keyframes scrollHorizontal {
@@ -39,4 +40,21 @@ body {
 
 .scroller[direction='left'] {
   --_animation-direction: forwards;
+}
+
+@keyframes fly {
+  0% {
+    transform: translateX(0) translateY(0) rotate(10deg);
+  }
+  100% {
+    transform: translateX(110vw) translateY(30vh) rotate(10deg);
+  }
+}
+
+#paper-plane {
+  z-index: 1;
+  left: -10vw;
+  top: 30vh;
+  height: 100px;
+  position: absolute;
 }

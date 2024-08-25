@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const BillCipher = document.getElementById('BillCipher')
     BillCipher.src = imgs_BillCipher[indexBillCipher]
 
-    setTimeout(glitchEffect, indexBillCipher == 0 ? 250 : 100)
+    setTimeout(glitchEffect, indexBillCipher == 0 ? 400 : 150)
 
     indexBillCipher == imgs_BillCipher.length - 1 ? (indexBillCipher = 0) : indexBillCipher++
   }
@@ -44,3 +44,11 @@ document.addEventListener('DOMContentLoaded', () => {
     indexElements == imgs_Elements.length - 1 ? (indexElements = 0) : indexElements++
   }, 1000)
 })
+
+function paperplane() {
+  const paperplane = document.getElementById('paper-plane')
+  paperplane.style.animation = 'fly 2s forwards linear'
+  setTimeout(() => {
+    paperplane.style.animation = 'none'
+  }, 2000)
+}
