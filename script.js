@@ -47,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function paperplane() {
   const paperplane = document.getElementById('paper-plane')
-  paperplane.style.visibility = 'visible'
   paperplane.style.animation = 'fly 2.5s forwards linear'
   setTimeout(() => {
     paperplane.style.animation = 'none'
