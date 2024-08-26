@@ -62,4 +62,5 @@ body {
   top: 30vh;
   height: 100px;
   position: absolute;
+  animation: none;
 }
