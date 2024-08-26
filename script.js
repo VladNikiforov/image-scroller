@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function paperplane() {
   const paperplane = document.getElementById('paper-plane')
-  paperplane.style.animation = 'fly 2.5s forwards linear'
+  paperplane.style.animation = 'fly 2.5s forwards ease-in'
   setTimeout(() => {
     paperplane.style.animation = 'none'
   }, 2500)
@@ -71,3 +71,11 @@ function theme() {
     }, 1000)
   }
 }
+
+  function launchConfetti() {
+    confetti({
+      particleCount: 100,
+      spread: 70,
+      origin: { y: 0.6 }
+    });
+  }
