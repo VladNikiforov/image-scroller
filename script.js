@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const BillCipher = document.getElementById('BillCipher')
     BillCipher.src = imgs_BillCipher[indexBillCipher]
 
-    setTimeout(glitchEffect, indexBillCipher == 0 ? 500 : 150)
+    setTimeout(glitchEffect, indexBillCipher == 0 ? 1500 : 150)
 
     indexBillCipher == imgs_BillCipher.length - 1 ? (indexBillCipher = 0) : indexBillCipher++
   }

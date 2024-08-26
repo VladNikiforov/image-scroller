@@ -3,6 +3,7 @@ body {
   place-content: center;
   background-color: #fff;
   overflow: hidden;
+  margin: 0;
 }
 
 @keyframes scrollHorizontal {
@@ -19,10 +20,20 @@ body {
 .scroller-content img {
   height: 30vh;
   border: 3px solid #000;
+  margin: 5px;
   transition: transform 0.3s ease;
 }
 
 .scroller-content img:hover {
+  transform: scale(1.1);
+}
+
+.scroller-content img[special='true'] {
+  box-shadow: 0 0 15px hsla(0, 0%, 0%, 0.897);
+}
+
+.scroller-content img[special='true']:hover {
+  box-shadow: none;
   transform: scale(1.1);
 }
 
@@ -36,7 +47,7 @@ body {
 .scroller .scroller-content {
   width: max-content;
   flex-wrap: nowrap;
-  animation: scrollHorizontal var(--_animation-duration, 30s) var(--_animation-direction, forwards) linear infinite;
+  animation: scrollHorizontal var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
 }
 
 .scroller[direction='right'] {
@@ -58,9 +69,9 @@ body {
 
 #paper-plane {
   z-index: 1;
-  left: -15vw;
+  left: -25vh;
   top: 30vh;
-  width: 10vw;
+  height: 20vh;
   position: absolute;
   animation: none;
 }
