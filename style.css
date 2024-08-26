@@ -58,9 +58,9 @@ body {
 
 #paper-plane {
   z-index: 1;
-  left: -10vw;
+  left: -15vw;
   top: 30vh;
-  height: 100px;
+  width: 10vw;
   position: absolute;
   animation: none;
 }
