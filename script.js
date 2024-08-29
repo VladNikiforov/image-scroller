@@ -66,7 +66,7 @@ const Watermelon = document.getElementById('Watermelon')
 Watermelon.addEventListener('click', () => {
   confetti({
     particleCount: 100,
-    spread: 70,
+    spread: 75,
     origin: { y: 0.6 },
   })
 })
