@@ -28,11 +28,11 @@ body {
   transform: scale(1.1);
 }
 
-.scroller-content img[special='true'] {
+.scroller-content .Special {
   box-shadow: 0 0 15px hsla(0, 0%, 0%, 0.897);
 }
 
-.scroller-content img[special='true']:hover {
+.scroller-content .Special:hover {
   box-shadow: none;
   transform: scale(1.1);
 }
@@ -63,7 +63,7 @@ body {
     transform: translateX(0) translateY(0) rotate(10deg);
   }
   100% {
-    transform: translateX(110vw) translateY(30vh) rotate(10deg);
+    transform: translateX(120vw) translateY(30vh) rotate(10deg);
   }
 }
 
