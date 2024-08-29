@@ -58,15 +58,15 @@ let mode = 'moon'
 function theme() {
   const Theme = document.getElementById('Theme')
   if (mode == 'moon') {
-    document.body.style.backgroundColor = '#2b2b2b'
     Theme.src = 'images/Theme/Sun.png'
+    document.body.style.backgroundColor = '#2b2b2b'
     setTimeout(() => {
       mode = 'sun'
     }, 1000)
   }
   if (mode == 'sun') {
-    document.body.style.backgroundColor = '#fff'
     Theme.src = 'images/Theme/Moon.png'
+    document.body.style.backgroundColor = '#fff'
     setTimeout(() => {
       mode = 'moon'
     }, 1000)
