@@ -27,7 +27,7 @@ body {
 
 @media (max-width: 500px) {
   .scroller-content img {
-    height: 20vw;
+    height: 30vw;
   }
 }
 
