@@ -74,3 +74,15 @@ Watermelon.addEventListener('click', () => {
 //TODO:
 //10: 2 animated, 2 special, 6 img
 //animated, img, img, special, img x2
+
+const Checkboxes = document.getElementById('Checkboxes')
+
+let checkboxesData = [1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1]
+
+for (let i = 0; i < 25; i++) {
+  let checkbox = document.createElement('input')
+  checkbox.type = 'checkbox'
+  checkbox.checked = checkboxesData[i]
+
+  Checkboxes.appendChild(checkbox)
+}
