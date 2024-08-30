@@ -25,6 +25,12 @@ body {
   transition: transform 0.3s ease;
 }
 
+@media (max-width: 500px) {
+  .scroller-content img {
+    height: 20vw;
+  }
+}
+
 .scroller-content img:hover {
   transform: scale(1.1);
 }
