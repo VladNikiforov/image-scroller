@@ -6,7 +6,7 @@ body {
   margin: 0;
 }
 
-@keyframes scrollHorizontal {
+@keyframes scroll {
   to {
     transform: translateX(calc(-50% - 0.5rem));
   }
@@ -48,7 +48,7 @@ body {
 .scroller .scroller-content {
   width: max-content;
   flex-wrap: nowrap;
-  animation: scrollHorizontal var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+  animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
 }
 
 .scroller[direction='right'] {
@@ -78,6 +78,7 @@ body {
 }
 
 #Checkboxes {
+  background-color: #fff;
   height: 30vh;
   width: 30vh;
   border: 3px solid #000;
@@ -85,4 +86,9 @@ body {
   margin: 5px;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
+  transition: transform 0.3s ease;
+}
+
+#Checkboxes:hover {
+  transform: scale(1.1);
 }

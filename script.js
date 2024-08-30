@@ -42,7 +42,22 @@ setInterval(() => {
   indexElements == imgs_Elements.length - 1 ? (indexElements = 0) : indexElements++
 }, 1000)
 
-//EASTER EGGS
+//SPORTS LOOP
+let imgs_Sports = ['basketball', 'football', 'volleyball']
+imgs_Sports = imgs_Sports.map((img) => {
+  return `images/Sports/${img}.png`
+})
+
+let indexSports = 0
+setInterval(() => {
+  const Sports = document.getElementById('Sports')
+  Sports.src = imgs_Sports[indexSports]
+
+  indexSports == imgs_Sports.length - 1 ? (indexSports = 0) : indexSports++
+}, 1000)
+
+//EASTER EGGS:
+//- Paper plane
 function paperplane() {
   const paperplane = document.getElementById('paper-plane')
   paperplane.style.animation = 'fly 2.5s forwards ease-in'
@@ -51,6 +66,7 @@ function paperplane() {
   }, 3000)
 }
 
+//- Theme
 const Theme = document.getElementById('Theme')
 Theme.addEventListener('click', () => {
   if (Theme.src.includes('Moon.png')) {
@@ -62,6 +78,7 @@ Theme.addEventListener('click', () => {
   }
 })
 
+//- Watermelon
 const Watermelon = document.getElementById('Watermelon')
 Watermelon.addEventListener('click', () => {
   confetti({
@@ -71,18 +88,19 @@ Watermelon.addEventListener('click', () => {
   })
 })
 
-//TODO:
-//10: 2 animated, 2 special, 6 img
-//animated, img, img, special, img x2
-
-const Checkboxes = document.getElementById('Checkboxes')
-
-let checkboxesData = [1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1]
-
+//- Checkboxes
 for (let i = 0; i < 25; i++) {
   let checkbox = document.createElement('input')
   checkbox.type = 'checkbox'
+  checkbox.id = i
+
+  let checkboxesData = [1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1]
   checkbox.checked = checkboxesData[i]
 
+  const Checkboxes = document.getElementById('Checkboxes')
   Checkboxes.appendChild(checkbox)
 }
+
+//TODO:
+//10: 2 animated, 2 special, 6 img
+//animated, img, img, special, img x2
