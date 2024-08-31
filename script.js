@@ -90,16 +90,20 @@ for (let i = 0; i < 25; i++) {
 
 //SCROLL
 const scrollers = document.querySelectorAll('.scroller')
-scrollers.forEach((scroller) => {
-  const scrollerInner = scroller.querySelector('.scroller-content')
-  const scrollerContent = Array.from(scrollerInner.children)
 
-  scrollerContent.forEach((item) => {
-    const duplicatedItem = item.cloneNode(true)
-    scrollerInner.appendChild(duplicatedItem)
+scrollers.forEach((scroller) => {
+  const scrollerContent = scroller.querySelector('.scroller-content')
+  const scrollerElements = [...scrollerContent.children]
+
+  const fragment = document.createDocumentFragment()
+
+  scrollerElements.forEach((item) => {
+    fragment.appendChild(item.cloneNode(true))
   })
+
+  scrollerContent.appendChild(fragment)
 })
 
 //TODO:
 //10: 2 animated, 2 special, 6 img
-//animated, img, img, special, img x2
+//special, img, img, animated, img x2
