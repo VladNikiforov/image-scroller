@@ -1,16 +1,3 @@
-//SCROLL
-const scrollers = document.querySelectorAll('.scroller')
-scrollers.forEach((scroller) => {
-  const scrollerInner = scroller.querySelector('.scroller-content')
-  const scrollerContent = Array.from(scrollerInner.children)
-
-  scrollerContent.forEach((item) => {
-    const duplicatedItem = item.cloneNode(true)
-    duplicatedItem.setAttribute('aria-hidden', true)
-    scrollerInner.appendChild(duplicatedItem)
-  })
-})
-
 //BILL CIPHER GLITCH
 let imgs_BillCipher = ['Bill-Cipher', 'broken-TV', 'art', 'binary', 'Bill-Cipher', 'broken-TV', 'art', 'binary']
 imgs_BillCipher = imgs_BillCipher.map((img) => {
@@ -92,7 +79,7 @@ Watermelon.addEventListener('click', () => {
 for (let i = 0; i < 25; i++) {
   let checkbox = document.createElement('input')
   checkbox.type = 'checkbox'
-  checkbox.id = i
+  checkbox.id = i + 1
 
   let checkboxesData = [1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1]
   checkbox.checked = checkboxesData[i]
@@ -100,6 +87,18 @@ for (let i = 0; i < 25; i++) {
   const Checkboxes = document.getElementById('Checkboxes')
   Checkboxes.appendChild(checkbox)
 }
+
+//SCROLL
+const scrollers = document.querySelectorAll('.scroller')
+scrollers.forEach((scroller) => {
+  const scrollerInner = scroller.querySelector('.scroller-content')
+  const scrollerContent = Array.from(scrollerInner.children)
+
+  scrollerContent.forEach((item) => {
+    const duplicatedItem = item.cloneNode(true)
+    scrollerInner.appendChild(duplicatedItem)
+  })
+})
 
 //TODO:
 //10: 2 animated, 2 special, 6 img
