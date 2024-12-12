@@ -1,50 +1,50 @@
-//BILL CIPHER GLITCH
-let imgs_BillCipher = ['Bill-Cipher', 'broken-TV', 'art', 'binary', 'Bill-Cipher', 'broken-TV', 'art', 'binary']
-imgs_BillCipher = imgs_BillCipher.map((img) => {
-  return `images/BillCipher/${img}.png`
+const scrollers = document.querySelectorAll('.scroller')
+scrollers.forEach((scroller) => {
+  const imageContainer = scroller.querySelector('.image-container')
+  if (imageContainer) {
+    const originalContent = imageContainer.innerHTML
+    imageContainer.innerHTML += originalContent
+  }
 })
 
-let indexBillCipher = 0
-function glitchEffect() {
-  const BillCipher = document.getElementById('BillCipher')
-  BillCipher.src = imgs_BillCipher[indexBillCipher]
+//BillCipher
+let imgs_BillCipher = ['Bill-Cipher', 'broken-TV', 'art', 'binary']
+imgs_BillCipher = [...imgs_BillCipher, ...imgs_BillCipher].map((img) => `images/BillCipher/${img}.png`)
 
-  setTimeout(glitchEffect, indexBillCipher == 0 ? 2000 : 100)
+const BillCiphers = document.querySelectorAll('.BillCipher')
+BillCiphers.forEach((BillCipher) => {
+  let indexBillCipher = 0
 
-  indexBillCipher == imgs_BillCipher.length - 1 ? (indexBillCipher = 0) : indexBillCipher++
+  function updateImage() {
+    BillCipher.src = imgs_BillCipher[indexBillCipher]
+    setTimeout(updateImage, indexBillCipher === 0 ? 1000 : 100)
+
+    indexBillCipher = (indexBillCipher + 1) % imgs_BillCipher.length
+  }
+
+  updateImage()
+})
+
+//Collage
+function imageCollage(imgs_array, path) {
+  imgs_array = imgs_array.map((img) => `images/${path}/${img}.png`)
+
+  const containers = document.querySelectorAll(`.${path}`)
+
+  containers.forEach((container) => {
+    let index = 0
+
+    setInterval(() => {
+      container.src = imgs_array[index]
+      index = (index + 1) % imgs_array.length
+    }, 1000)
+  })
 }
-glitchEffect()
 
-//ELEMENTS LOOP
-let imgs_Elements = ['water', 'fire', 'earth', 'wind', 'leaf']
-imgs_Elements = imgs_Elements.map((img) => {
-  return `images/Elements/${img}.png`
-})
+imageCollage(['basketball', 'football', 'volleyball'], 'Sports')
+imageCollage(['water', 'fire', 'earth', 'wind', 'leaf'], 'Elements')
 
-let indexElements = 0
-setInterval(() => {
-  const Elements = document.getElementById('Elements')
-  Elements.src = imgs_Elements[indexElements]
-
-  indexElements == imgs_Elements.length - 1 ? (indexElements = 0) : indexElements++
-}, 1000)
-
-//SPORTS LOOP
-let imgs_Sports = ['basketball', 'football', 'volleyball']
-imgs_Sports = imgs_Sports.map((img) => {
-  return `images/Sports/${img}.png`
-})
-
-let indexSports = 0
-setInterval(() => {
-  const Sports = document.getElementById('Sports')
-  Sports.src = imgs_Sports[indexSports]
-
-  indexSports == imgs_Sports.length - 1 ? (indexSports = 0) : indexSports++
-}, 1000)
-
-//EASTER EGGS:
-//- Paper plane
+//Paperplane
 function paperplane() {
   const paperplane = document.getElementById('paper-plane')
   paperplane.style.animation = 'fly 2.5s forwards ease-in'
@@ -53,19 +53,21 @@ function paperplane() {
   }, 3000)
 }
 
-//- Theme
-const Theme = document.getElementById('Theme')
-Theme.addEventListener('click', () => {
-  if (Theme.src.includes('Moon.png')) {
-    Theme.src = 'images/Theme/Sun.png'
-    document.body.style.backgroundColor = '#2b2b2b'
-  } else {
-    Theme.src = 'images/Theme/Moon.png'
-    document.body.style.backgroundColor = '#fff'
-  }
+//Theme
+const Themes = document.querySelectorAll('.Theme')
+Themes.forEach((Theme) => {
+  Theme.addEventListener('click', () => {
+    if (Theme.src.includes('Moon.png')) {
+      Theme.src = 'images/Theme/Sun.png'
+      document.body.style.backgroundColor = '#333'
+    } else {
+      Theme.src = 'images/Theme/Moon.png'
+      document.body.style.backgroundColor = '#fff'
+    }
+  })
 })
 
-//- Watermelon
+//Watermelon
 const Watermelon = document.getElementById('Watermelon')
 Watermelon.addEventListener('click', () => {
   confetti({
@@ -75,10 +77,9 @@ Watermelon.addEventListener('click', () => {
   })
 })
 
-//- Checkboxes
+//Checkboxes
 for (let i = 0; i < 25; i++) {
-  let checkbox = document.createElement('input')
-  checkbox.type = 'checkbox'
+  let checkbox = (document.createElement('input').type = 'checkbox')
   checkbox.id = i + 1
 
   let checkboxesData = [1, 0, 1, 0, 1, 1, 0, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 1, 0, 1, 1, 0, 1, 0, 1]
@@ -87,23 +88,3 @@ for (let i = 0; i < 25; i++) {
   const Checkboxes = document.getElementById('Checkboxes')
   Checkboxes.appendChild(checkbox)
 }
-
-//SCROLL
-const scrollers = document.querySelectorAll('.scroller')
-
-scrollers.forEach((scroller) => {
-  const scrollerContent = scroller.querySelector('.scroller-content')
-  const scrollerElements = [...scrollerContent.children]
-
-  const fragment = document.createDocumentFragment()
-
-  scrollerElements.forEach((item) => {
-    fragment.appendChild(item.cloneNode(true))
-  })
-
-  scrollerContent.appendChild(fragment)
-})
-
-//TODO:
-//10: 2 animated, 2 special, 6 img
-//special, img, img, animated, img x2
