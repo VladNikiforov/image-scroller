@@ -1,44 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Image Scroller</title>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-  </head>
 
-  <body>
-    <div class="scroller" direction="left">
-      <div class="image-container">
-        <img class="scroll Special" onclick="paperplane()" src="images/paper-plane.png" />
-        <img class="scroll" src="images/happy-egg.png" />
-        <img class="scroll Special Elements" src="images/Elements/water.png" />
-        <img class="scroll" src="images/dinosaur.png" />
-        <img class="scroll Special" src="images/Other/4D.gif" />
-        <img class="scroll" src="images/splash.png" />
-        <img class="scroll Special Sports" src="images/Sports/basketball.png" />
-        <img class="scroll" src="images/illusion2.png" />
-        <img class="scroll" src="images/blobs.png" />
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Image Scroller</title>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+
+<body>
+  <div class="scroller" direction="left">
+    <div class="image-container">
+      <img class="scroll Special" onclick="paperplane()" src="images/paper-plane.png" />
+      <img class="scroll" src="images/happy-egg.png" />
+      <img class="scroll Special Elements" src="images/Elements/water.png" />
+      <img class="scroll" src="images/dinosaur.png" />
+      <img class="scroll Special" src="images/Other/4D.gif" />
+      <img class="scroll" src="images/splash.png" />
+      <img class="scroll Special Sports" src="images/Sports/basketball.png" />
+      <img class="scroll" src="images/illusion2.png" />
+      <img class="scroll" src="images/blobs.png" />
     </div>
-    <div class="scroller" direction="right">
-      <div class="image-container">
-        <img class="scroll Special Theme" src="images/Theme/Moon.png" />
-        <img class="scroll" src="images/puzzle.png" />
-        <img class="scroll Special" id="Watermelon" src="images/Watermelon.png" />
-        <img class="scroll" src="images/PewDiePie.png" />
-        <span class="scroll Special" id="Checkboxes"></span>
-        <img class="scroll" src="images/star.png" />
-        <img class="scroll Special BillCipher" src="images/BillCipher/Bill-Cipher.png" />
-        <img class="scroll" src="images/capybara.png" />
-        <img class="scroll" src="images/illusion1.png" />
-        <div class="scroll image-frame"></div>
-      </div>
+  </div>
+  <div class="scroller" direction="right">
+    <div class="image-container">
+      <img class="scroll Special Theme" src="images/Theme/Moon.png" />
+      <img class="scroll" src="images/puzzle.png" />
+      <img class="scroll Special" id="Watermelon" src="images/Watermelon.png" />
+      <img class="scroll" src="images/PewDiePie.png" />
+      <span class="scroll Special" id="Checkboxes"></span>
+      <img class="scroll" src="images/star.png" />
+      <img class="scroll Special BillCipher" src="images/BillCipher/Bill-Cipher.png" />
+      <img class="scroll" src="images/capybara.png" />
+      <img class="scroll" src="images/illusion1.png" />
+      <div class="scroll image-frame"></div>
     </div>
+  </div>
 
-    <img id="paper-plane" src="images/Other/fly-paperplane.png" />
+  <img id="paper-plane" src="images/Other/fly-paperplane.png" />
 
-    <script src="script.js" defer></script>
-  </body>
+  <script src="script.js" defer></script>
+</body>
+
 </html>
